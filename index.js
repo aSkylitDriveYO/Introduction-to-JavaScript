@@ -17,7 +17,11 @@ Do the following:
 
    HINT: no function required
 */
-
+var votingAge = 18;
+if(votingAge => 18) {
+  votingAge=true;
+}
+console.log(votingAge);
 
 
 /*
@@ -30,7 +34,12 @@ Do the following:
 
    HINT: no function required
 */
-
+var a = 5;
+var b = 10;
+if (a===5) {
+var b=15;
+}
+console.log(b)
 
 
 
@@ -58,9 +67,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a,b){
+  return a * b;
   }
+ 
 
 
 
@@ -74,8 +84,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(humanAge){
+  return humanAge*7;
 }
 
 
@@ -107,8 +117,24 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(age, weight){
+  let food=0;
+  if (age >=1 && weight <= 5) {
+    food=weight*.05;
+  } else if (age >= 1 && weight >5 && weight <=10) {
+    food=weight*.04;
+  } else if (age >= 1 && weight >10 && weight <=15) {
+    food=weight*.03;
+  } else if (age >= 1 && weight >15) {
+    food=weight*.02;
+  } else if (age >.15 && age <= .33) {
+    food=weight*.1;
+  } else if (age >.33 && age <=.583) {
+    food=weight*.05;
+  } else if (age > .583) {
+    food=weight*.04;
+  }
+  return food;
   }
 
 
@@ -135,7 +161,49 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-    /*add your code here*/
+  const userChoice = prompt("Do you choose rock, paper or scissors?");
+  let compChoice=Math.random();
+  
+  if (compChoice <= 0.34) {
+    compChoice = "rock";
+  } else if(compChoice >= 0.67) {
+    compChoice = "paper";
+  } else {
+    compChoice = "scissors";
+  }
+  
+  function compare(choice1,choice2){
+    if(choice1===choice2){
+        return "The result is a tie!";
+    }
+    else if(choice1==="rock"){
+        if(choice2==="scissors"){
+            return "rock wins"
+        }
+        else if(choice2==="paper"){
+            return "paper wins";
+        }
+    }
+    else if(choice1==="paper"){
+        if(choice2==="scissors"){
+            return "scissors win"
+        }
+        else if(choice2==="rock"){
+            return "paper wins";
+        }
+    }
+    else if(choice1==="scissors"){
+        if(choice2==="paper"){
+            return "scissors win"
+        }
+        else if(choice2==="rock"){
+            return "rock wins";
+        }
+    }
+    
+  }
+  
+  console.log(compare(userChoice,compChoice));
 }
   
   
@@ -151,8 +219,8 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometers){
+    return kilometers * 0.621371;
   }
 
 
@@ -165,8 +233,8 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm){
+    return cm * 0.0328084;
   }
  
 
@@ -201,9 +269,21 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if(score <= 100 && score >=90){
+    score='you got an A'
+  } else if(score <= 89 && score >=80){
+    score='you got a B'
+  } else if(score <= 79 && score >=70){
+    score='you got a C'
+  } else if(score <= 69 && score >=60){
+    score='you got a D'
+  } else {
+    score='you got an F'
   }
+  return score;
+
+}
   
   
 
